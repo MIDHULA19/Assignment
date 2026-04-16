@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@theme {
+  --color-brand-primary: #244855;   /* Deep Teal */
+  --color-brand-accent: #E64833;    /* Red */
+  --color-brand-tertiary: #874F41;  /* Brown */
+  --color-brand-sage: #90AEAD;      /* Sage */
+  --color-brand-cream: #FBE9D0;     /* Cream */
+  --color-brand-cream-light: #FFF9F0;
+  
+  --font-sans: "Outfit", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+  
+  --spacing-section: 80px;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-cream text-brand-primary font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-accent text-white px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-[#d13d2a] hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-brand-primary text-brand-primary px-6 py-3 rounded-md font-semibold transition-all duration-300 hover:bg-brand-primary hover:text-white active:scale-95;
+  }
+  
+  .section-padding {
+    @apply py-section;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-brand-cream-light;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-sage rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-primary;
+}
