@@ -46,11 +46,11 @@ const Navbar: React.FC = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
+      const navbarHeight = 80; // Estimated height, can be dynamic
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
+      const offsetPosition = elementPosition - navbarHeight;
 
       window.scrollTo({
         top: offsetPosition,
@@ -135,15 +135,15 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Action Button */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <button
             onClick={() => scrollToSection('final-apply')}
-            className="bg-brand-accent text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95 whitespace-nowrap"
+            className="bg-brand-accent text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg font-bold text-xs sm:text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95 whitespace-nowrap"
           >
             Apply Now
           </button>
 
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-brand-accent p-2">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-brand-accent p-1 sm:p-2" aria-label="Toggle Menu">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

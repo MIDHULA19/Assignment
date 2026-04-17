@@ -49,31 +49,6 @@ const tools: Tool[] = [
   { name: 'Diffusers', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', text: 'Diffusers', textStyle: 'font-bold text-black text-lg ml-2', imageStyle: 'h-8' }
 ];
 
-const ToolItem = ({ tool }: { tool: Tool }) => {
-  if (tool.textOnly) {
-    return <div className={`flex items-center justify-center ${tool.style}`}>{tool.text}</div>;
-  }
-
-  if (tool.isWordmark && tool.logo) {
-    return <img src={tool.logo} alt={tool.name} className={tool.imageStyle} referrerPolicy="no-referrer" />;
-  }
-
-  if (tool.stackText && tool.logo) {
-    return (
-      <div className="flex flex-col items-center justify-center text-center">
-        <img src={tool.logo} alt={tool.name} className={tool.imageStyle} referrerPolicy="no-referrer" />
-        {tool.text && <span className={tool.textStyle}>{tool.text}</span>}
-      </div>
-    );
-  }
-
-  return (
-    <div className="flex items-center justify-center">
-      {tool.logo && <img src={tool.logo} alt={tool.name} className={tool.imageStyle} referrerPolicy="no-referrer" />}
-      {tool.text && <span className={tool.textStyle}>{tool.text}</span>}
-    </div>
-  );
-};
 
 const SkillsTools: React.FC = () => {
   return (
@@ -106,31 +81,30 @@ const SkillsTools: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-800 mb-16 text-left">
             19+ Tools Covered
           </h2>
-          <div className="flex flex-col gap-16 w-full items-center px-2">
-            {/* Row 1 */}
-            <div className="flex flex-wrap justify-between items-center w-full">
-              {tools.slice(0, 6).map((tool, i) => (
-                <motion.div key={`r1-${i}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-center justify-center shrink-0">
-                  <ToolItem tool={tool} />
-                </motion.div>
-              ))}
-            </div>
-            {/* Row 2 */}
-            <div className="flex flex-wrap justify-between items-center w-full">
-              {tools.slice(6, 12).map((tool, i) => (
-                <motion.div key={`r2-${i}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-center justify-center shrink-0">
-                  <ToolItem tool={tool} />
-                </motion.div>
-              ))}
-            </div>
-            {/* Row 3 */}
-            <div className="flex flex-wrap justify-between items-center w-full">
-              {tools.slice(12, 19).map((tool, i) => (
-                <motion.div key={`r3-${i}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-center justify-center shrink-0">
-                  <ToolItem tool={tool} />
-                </motion.div>
-              ))}
-            </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-8 sm:gap-x-12 gap-y-12 sm:gap-y-16 items-center justify-items-center bg-gray-50/30 p-6 sm:p-12 rounded-[24px] sm:rounded-[40px] border border-gray-100">
+            {tools.map((tool, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="flex flex-col items-center justify-center gap-4 group cursor-help w-full"
+              >
+                {tool.logo ? (
+                  <div className="h-12 w-full flex items-center justify-center transition-all duration-500 hover:scale-110">
+                    <img src={tool.logo} alt={tool.name} className="max-h-full max-w-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="h-12 flex items-center justify-center">
+                    <span className="text-xl font-black text-brand-primary/40 uppercase tracking-tighter group-hover:text-brand-accent transition-colors">{tool.name}</span>
+                  </div>
+                )}
+                <div className="text-[10px] font-black uppercase tracking-widest text-brand-tertiary/20 opacity-0 group-hover:opacity-100 transition-opacity text-center">
+                  {tool.name}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

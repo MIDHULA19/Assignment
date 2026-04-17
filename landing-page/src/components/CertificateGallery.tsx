@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OttobonCertificate, { CertificateData } from './OttobonCertificate';
+import OttobonCertificate, { type CertificateData } from './OttobonCertificate';
 
 const dummyData: CertificateData[] = [
   {

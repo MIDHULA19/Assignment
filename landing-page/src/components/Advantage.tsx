@@ -6,9 +6,9 @@ const Advantage: React.FC = () => {
   return (
     <section id="advantage" className="py-24 bg-brand-cream-light relative overflow-hidden">
       <div className="container-custom">
-        <div className="max-w-4xl mb-16 text-center mx-auto">
-          <h2 className="text-4xl font-black text-brand-primary mb-6">Applied AI Course Advantage</h2>
-          <p className="text-xl text-brand-tertiary/80 font-medium max-w-3xl mx-auto">
+        <div className="max-w-4xl mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl font-black text-brand-primary mb-6 text-center mx-auto uppercase tracking-tighter">Applied AI Course Advantage</h2>
+          <p className="text-lg sm:text-xl text-brand-tertiary/80 text-center font-medium max-w-3xl mx-auto italic">
             Gain a competitive edge through practical learning in the dynamic field of Generative AI. Develop expertise in prompt engineering, LLMs, Agentic frameworks, and Multi Agent systems.
           </p>
         </div>
@@ -18,7 +18,7 @@ const Advantage: React.FC = () => {
           <CertificateGallery />
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-xl border border-brand-cream relative">
+        <div className="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-xl border border-brand-cream relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
           
           <h4 className="text-2xl font-black text-brand-primary mb-8 border-l-4 border-brand-accent pl-5 uppercase tracking-wider">

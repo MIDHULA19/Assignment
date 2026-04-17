@@ -59,8 +59,8 @@ const MarketContext: React.FC = () => {
         </div>
 
         <div>
-          <h3 className="text-2xl font-black text-brand-primary mb-12 uppercase tracking-tight">Companies Hiring</h3>
-          <div className="grid grid-cols-2 lg:grid-cols-7 gap-y-16 gap-x-12 items-center">
+          <h3 className="text-2xl font-black text-brand-primary mb-8 sm:mb-12 uppercase tracking-tight">Companies Hiring</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-y-12 sm:gap-y-16 gap-x-8 sm:gap-x-12 items-center">
             {[
               { name: 'NVIDIA', logo: 'https://www.vectorlogo.zone/logos/nvidia/nvidia-ar21.svg' },
               { name: 'OpenAI', logo: 'https://cdn.worldvectorlogo.com/logos/openai-2.svg' },
@@ -85,7 +85,7 @@ const MarketContext: React.FC = () => {
                 transition={{ delay: i * 0.05 }}
                 className="flex flex-col items-center justify-center transition-all duration-500 hover:scale-110 relative group cursor-pointer"
               >
-                <img src={company.logo} alt={company.name} className="h-8 md:h-10 w-auto object-contain pointer-events-none" />
+                <img src={company.logo} alt={company.name} className="h-6 sm:h-8 md:h-10 w-auto object-contain pointer-events-none" />
                 <span className="absolute -top-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-brand-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg pointer-events-none whitespace-nowrap z-10 before:content-[''] before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-brand-primary drop-shadow-md">{company.name}</span>
               </motion.div>
             ))}

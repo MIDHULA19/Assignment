@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden bg-brand-primary">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
+      <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-sage rounded-full blur-[150px] -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-brand-accent rounded-full blur-[120px] translate-y-1/2 -translate-x-1/2" />
       </div>
@@ -35,7 +35,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1]"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-[1.1]"
             >
               Advanced Executive Program in <span className="text-brand-accent italic">Applied GenAI</span>
             </motion.h1>
@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl leading-relaxed italic"
+              className="text-base sm:text-lg md:text-xl text-white/70 mb-8 max-w-2xl leading-relaxed italic"
             >
               "Master the art of building multi-agent systems and production-grade RAG applications with the pioneers from Ottobon."
             </motion.p>
@@ -53,7 +53,7 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10"
+              className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-10"
             >
               {[
                 { label: 'Duration', val: '4 Months', icon: Calendar },
@@ -61,12 +61,12 @@ const Hero: React.FC = () => {
                 { label: 'Cohort', val: 'May 2026', icon: Briefcase },
                 { label: 'Format', val: 'Online', icon: Download },
               ].map((item, i) => (
-                <div key={i} className="flex flex-col gap-1 border-l-2 border-brand-accent/30 pl-4">
+                <div key={i} className="flex flex-col gap-1 border-l-2 border-brand-accent/30 pl-3 sm:pl-4">
                   <div className="flex items-center gap-2 text-brand-sage">
-                    <item.icon size={16} />
-                    <span className="text-xs font-black uppercase tracking-widest">{item.label}</span>
+                    <item.icon size={14} className="sm:size-4" />
+                    <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest">{item.label}</span>
                   </div>
-                  <span className="text-lg font-black">{item.val}</span>
+                  <span className="text-base sm:text-lg font-black">{item.val}</span>
                 </div>
               ))}
             </motion.div>
@@ -77,10 +77,13 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap gap-4"
             >
-              <button onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })} className="btn-primary text-lg px-8 py-4 flex items-center gap-2">
+              <button 
+                onClick={() => document.getElementById('registration')?.scrollIntoView({ behavior: 'smooth' })} 
+                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center gap-2 w-full sm:w-auto justify-center"
+              >
                 Reserve Seat <span className="text-xl">➔</span>
               </button>
-              <button className="bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white border border-white/20 text-lg px-8 py-4 rounded-md font-semibold transition-all flex items-center gap-2">
+              <button className="bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white border border-white/20 text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-md font-semibold transition-all flex items-center gap-2 w-full sm:w-auto justify-center">
                 <Download size={20} /> Syllabus
               </button>
             </motion.div>

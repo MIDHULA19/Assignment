@@ -24,7 +24,7 @@ const BatchProfile: React.FC = () => {
                The Executive Program in Applied Generative AI caters to working professionals across different industries. Learner diversity adds richness to class discussions and interactions.
             </p>
 
-            <div className="bg-white border border-gray-100 rounded-[32px] p-8 lg:p-16 shadow-2xl shadow-gray-200">
+            <div className="bg-white border border-gray-100 rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 lg:p-16 shadow-2xl shadow-gray-200">
                <div className="flex items-center gap-4 mb-12 border-b border-gray-50 pb-6">
                   <span className="text-lg font-black text-brand-primary">Industry</span>
                   <div className="ml-auto w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center">
@@ -32,9 +32,9 @@ const BatchProfile: React.FC = () => {
                   </div>
                </div>
 
-               <div className="grid lg:grid-cols-2 gap-16 items-center">
+               <div className="grid md:grid-cols-2 gap-8 sm:gap-16 items-center">
                   {/* Chart */}
-                  <div className="h-[400px] w-full relative">
+                  <div className="h-[300px] sm:h-[400px] w-full relative">
                      <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                            <Pie
@@ -64,7 +64,7 @@ const BatchProfile: React.FC = () => {
                   </div>
 
                   {/* Company Grid & Text */}
-                  <div className="grid grid-cols-2 gap-x-12">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-x-12">
                      <div className="space-y-4">
                         <h5 className="text-xs font-black uppercase tracking-widest text-brand-accent border-b-2 border-brand-accent/20 pb-2 inline-block mb-4">Industry</h5>
                         {data.map((item, i) => (

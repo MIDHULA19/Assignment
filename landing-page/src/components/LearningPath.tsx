@@ -31,7 +31,7 @@ const LearningPath: React.FC = () => {
   return (
     <section id="details" className="py-24 bg-white">
       <div className="container-custom">
-        <h2 className="text-4xl font-black text-brand-primary mb-12">Program Details</h2>
+        <h2 className="text-3xl sm:text-4xl font-black text-brand-primary mb-12 uppercase tracking-tighter">Program Details</h2>
 
         <div className="mb-16">
           <p className="text-xl text-brand-tertiary/80 leading-relaxed font-medium max-w-4xl">
@@ -41,7 +41,7 @@ const LearningPath: React.FC = () => {
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Timeline Left */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-8 order-2 lg:order-1">
             <h3 className="text-2xl font-black text-brand-primary mb-8 uppercase tracking-tight">Learning Path</h3>
             <div className="space-y-4">
               {modules.map((mod) => (
@@ -51,10 +51,10 @@ const LearningPath: React.FC = () => {
                     className={`w-full flex items-center justify-between p-6 text-left transition-colors ${openId === mod.id ? 'bg-brand-cream/10' : 'bg-white'}`}
                   >
                     <div className="flex items-center gap-6">
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm ${openId === mod.id ? 'bg-brand-accent text-white' : 'bg-gray-100 text-brand-primary/40'}`}>
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm shrink-0 ${openId === mod.id ? 'bg-brand-accent text-white' : 'bg-gray-100 text-brand-primary/40'}`}>
                         {mod.id}
                       </div>
-                      <span className={`text-lg font-black transition-colors ${openId === mod.id ? 'text-brand-accent' : 'text-brand-primary'}`}>
+                      <span className={`text-base sm:text-lg font-black transition-colors ${openId === mod.id ? 'text-brand-accent' : 'text-brand-primary'}`}>
                         {mod.title}
                       </span>
                     </div>
@@ -89,7 +89,7 @@ const LearningPath: React.FC = () => {
           </div>
 
           {/* Sidebar Right */}
-          <div className="lg:col-span-4 sticky top-32">
+          <div className="lg:col-span-4 lg:sticky top-32 order-1 lg:order-2">
             <div className="space-y-8">
               {/* Contact Card */}
               <div className="bg-white border-2 border-brand-cream shadow-2xl rounded-3xl p-8 flex items-center justify-between group overflow-hidden relative">
