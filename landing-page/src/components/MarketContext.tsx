@@ -72,9 +72,9 @@ const MarketContext: React.FC = () => {
               { name: 'Apple', logo: 'https://www.vectorlogo.zone/logos/apple/apple-ar21.svg' },
               { name: 'Amazon', logo: 'https://www.vectorlogo.zone/logos/amazon/amazon-ar21.svg' },
               { name: 'EY', logo: 'https://www.vectorlogo.zone/logos/ey/ey-ar21.svg' },
-              { name: 'Deloitte', logo: 'https://www.vectorlogo.zone/logos/deloitte/deloitte-ar21.svg' },
+              { name: 'Deloitte', logo: 'https://cdn.worldvectorlogo.com/logos/deloitte-2.svg' },
               { name: 'Accenture', logo: 'https://www.vectorlogo.zone/logos/accenture/accenture-ar21.svg' },
-              { name: 'BOSCH', logo: 'https://www.vectorlogo.zone/logos/bosch/bosch-ar21.svg' },
+              { name: 'BOSCH', logo: 'https://cdn.worldvectorlogo.com/logos/bosch.svg' },
               { name: 'SIEMENS', logo: 'https://www.vectorlogo.zone/logos/siemens/siemens-ar21.svg' },
             ].map((company, i) => (
               <motion.div

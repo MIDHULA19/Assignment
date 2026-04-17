@@ -65,29 +65,29 @@ const Navbar: React.FC = () => {
       <div className="container-custom flex justify-between items-center h-16">
         {/* Logo & Search */}
         <div className="flex items-center gap-6">
-          <div 
+          <div
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-2xl font-black tracking-tighter text-brand-primary cursor-pointer shrink-0"
+            className="text-2xl font-black tracking-tighter text-brand-accent cursor-pointer shrink-0"
           >
             GEN<span className="text-brand-accent">AI</span> PRO
           </div>
 
           {!showCourseNav && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="hidden lg:flex items-center gap-6"
             >
-              <button className="flex items-center gap-1 font-semibold text-brand-primary whitespace-nowrap">
+              <button className="flex items-center gap-1 font-semibold text-brand-accent whitespace-nowrap">
                 Explore <ChevronDown size={16} />
               </button>
               <div className="relative">
                 <input
                   type="text"
                   placeholder="Search for courses"
-                  className="bg-gray-100 rounded-full py-2 px-4 pl-10 w-48 xl:w-64 focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all text-sm"
+                  className="bg-gray-100 rounded-full py-2 px-4 pl-10 w-48 xl:w-64 focus:outline-none focus:ring-2 focus:ring-brand-accent transition-all text-sm text-brand-accent placeholder-brand-accent/70"
                 />
-                <Search className="absolute left-3 top-2.5 text-gray-400" size={16} />
+                <Search className="absolute left-3 top-2.5 text-brand-accent/70" size={16} />
               </div>
             </motion.div>
           )}
@@ -97,19 +97,19 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:flex flex-1 justify-center px-8 overflow-hidden h-full items-center">
           <AnimatePresence mode="wait">
             {!showCourseNav ? (
-              <motion.div 
+              <motion.div
                 key="global-nav"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 className="flex items-center gap-8"
               >
-                <button onClick={() => scrollToSection('advantage')} className="font-semibold text-brand-primary hover:text-brand-accent transition-colors">Highlights</button>
-                <button onClick={() => scrollToSection('learning-path')} className="font-semibold text-brand-primary hover:text-brand-accent transition-colors">Curriculum</button>
-                <button onClick={() => scrollToSection('details')} className="font-semibold text-brand-primary hover:text-brand-accent transition-colors">Advisors</button>
+                <button onClick={() => scrollToSection('advantage')} className="font-semibold text-brand-accent hover:opacity-80 transition-opacity">Highlights</button>
+                <button onClick={() => scrollToSection('learning-path')} className="font-semibold text-brand-accent hover:opacity-80 transition-opacity">Curriculum</button>
+                <button onClick={() => scrollToSection('details')} className="font-semibold text-brand-accent hover:opacity-80 transition-opacity">Advisors</button>
               </motion.div>
             ) : (
-              <motion.div 
+              <motion.div
                 key="course-nav"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -120,9 +120,8 @@ const Navbar: React.FC = () => {
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className={`text-xs xl:text-sm font-bold transition-all relative whitespace-nowrap ${
-                      activeSection === link.id ? 'text-brand-accent' : 'text-brand-primary/60 hover:text-brand-primary'
-                    }`}
+                    className={`text-xs xl:text-sm font-bold transition-all relative whitespace-nowrap ${activeSection === link.id ? 'text-brand-accent' : 'text-brand-primary/60 hover:text-brand-primary'
+                      }`}
                   >
                     {link.label}
                     {activeSection === link.id && (
@@ -137,14 +136,14 @@ const Navbar: React.FC = () => {
 
         {/* Action Button */}
         <div className="flex items-center gap-4">
-          <button 
+          <button
             onClick={() => scrollToSection('final-apply')}
             className="bg-brand-accent text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:translate-y-[-2px] hover:shadow-lg transition-all active:scale-95 whitespace-nowrap"
           >
             Apply Now
           </button>
-          
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-brand-primary p-2">
+
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="lg:hidden text-brand-accent p-2">
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -153,7 +152,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -162,13 +161,13 @@ const Navbar: React.FC = () => {
             <div className="py-6 px-6 flex flex-col gap-4">
               {showCourseNav ? (
                 courseLinks.map(link => (
-                  <button key={link.id} onClick={() => scrollToSection(link.id)} className="text-left text-sm font-bold text-brand-primary py-2 border-b border-gray-50 uppercase tracking-wider">{link.label}</button>
+                  <button key={link.id} onClick={() => scrollToSection(link.id)} className="text-left text-sm font-bold text-brand-accent py-2 border-b border-gray-50 uppercase tracking-wider">{link.label}</button>
                 ))
               ) : (
                 <>
-                  <button onClick={() => scrollToSection('advantage')} className="text-left font-bold text-brand-primary py-2 uppercase tracking-wider text-sm">Highlights</button>
-                  <button onClick={() => scrollToSection('learning-path')} className="text-left font-bold text-brand-primary py-2 uppercase tracking-wider text-sm">Curriculum</button>
-                  <button onClick={() => scrollToSection('details')} className="text-left font-bold text-brand-primary py-2 uppercase tracking-wider text-sm">Advisors</button>
+                  <button onClick={() => scrollToSection('advantage')} className="text-left font-bold text-brand-accent py-2 uppercase tracking-wider text-sm">Highlights</button>
+                  <button onClick={() => scrollToSection('learning-path')} className="text-left font-bold text-brand-accent py-2 uppercase tracking-wider text-sm">Curriculum</button>
+                  <button onClick={() => scrollToSection('details')} className="text-left font-bold text-brand-accent py-2 uppercase tracking-wider text-sm">Advisors</button>
                 </>
               )}
             </div>
