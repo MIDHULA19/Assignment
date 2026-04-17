@@ -21,12 +21,12 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       <main>
         <section id="hero">
           <Hero />
         </section>
-        
+
         <section id="overview">
           <MarketContext />
         </section>

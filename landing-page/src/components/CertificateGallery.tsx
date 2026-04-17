@@ -48,7 +48,7 @@ const CertificateGallery: React.FC = () => {
     <div className="w-full">
       {/* Desktop Grid Layout */}
       <div className="hidden lg:grid grid-cols-2 gap-12 max-w-6xl mx-auto">
-        {dummyData.map((data, idx) => (
+        {dummyData.map((data) => (
           <div key={data.id} className="opacity-100 flex items-center justify-center">
             <OttobonCertificate data={data} />
           </div>

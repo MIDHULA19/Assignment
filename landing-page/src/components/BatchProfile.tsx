@@ -10,9 +10,18 @@ const data = [
 ];
 
 const companies = [
-   'NVIDIA', 'OpenAI', 'NETFLIX', 'Google',
-   'Microsoft', 'IBM', 'LinkedIn', 'Apple',
-   'Deloitte', 'BOSCH', 'accenture', 'SIEMENS'
+   { name: 'NVIDIA', logo: 'https://www.vectorlogo.zone/logos/nvidia/nvidia-ar21.svg' },
+   { name: 'OpenAI', logo: 'https://cdn.worldvectorlogo.com/logos/openai-2.svg' },
+   { name: 'Netflix', logo: 'https://www.vectorlogo.zone/logos/netflix/netflix-ar21.svg' },
+   { name: 'Google', logo: 'https://www.vectorlogo.zone/logos/google/google-ar21.svg' },
+   { name: 'Microsoft', logo: 'https://www.vectorlogo.zone/logos/microsoft/microsoft-ar21.svg' },
+   { name: 'IBM', logo: 'https://www.vectorlogo.zone/logos/ibm/ibm-ar21.svg' },
+   { name: 'LinkedIn', logo: 'https://www.vectorlogo.zone/logos/linkedin/linkedin-ar21.svg' },
+   { name: 'Apple', logo: 'https://www.vectorlogo.zone/logos/apple/apple-ar21.svg' },
+   { name: 'Deloitte', logo: 'https://cdn.worldvectorlogo.com/logos/deloitte-2.svg' },
+   { name: 'BOSCH', logo: 'https://cdn.worldvectorlogo.com/logos/bosch.svg' },
+   { name: 'Accenture', logo: 'https://www.vectorlogo.zone/logos/accenture/accenture-ar21.svg' },
+   { name: 'SIEMENS', logo: 'https://www.vectorlogo.zone/logos/siemens/siemens-ar21.svg' },
 ];
 
 const BatchProfile: React.FC = () => {
@@ -77,10 +86,10 @@ const BatchProfile: React.FC = () => {
 
                      <div className="space-y-4">
                         <h5 className="text-xs font-black uppercase tracking-widest text-brand-accent border-b-2 border-brand-accent/20 pb-2 inline-block mb-4">Companies</h5>
-                        <div className="grid grid-cols-2 gap-6 items-center">
+                        <div className="grid grid-cols-2 gap-y-8 gap-x-12 items-center">
                            {companies.map((company, i) => (
-                              <div key={i} className="flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-40 hover:opacity-100 h-8">
-                                 <span className="text-xs font-black text-brand-primary truncate">{company}</span>
+                              <div key={i} className="flex items-center justify-center transition-all duration-300 hover:scale-110 h-8">
+                                 <img src={company.logo} alt={company.name} className="h-full w-auto object-contain" />
                               </div>
                            ))}
                         </div>
