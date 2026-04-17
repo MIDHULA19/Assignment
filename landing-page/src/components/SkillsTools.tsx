@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { BadgeCheck } from 'lucide-react';
 
 const skills = [
   'Python Programming', 'Prompt Engineering', 'Variational Autoencoders',
@@ -10,27 +10,70 @@ const skills = [
   'Generative AI Governance'
 ];
 
-const tools = [
-  { name: 'Microsoft Copilot', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Microsoft_365_Copilot_Icon.svg' },
-  { name: 'ChatGPT', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg' },
-  { name: 'LangChain', logo: 'https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/langchain_logo.png' },
-  { name: 'Python', logo: 'https://www.vectorlogo.zone/logos/python/python-official.svg' },
-  { name: 'Hugging Face', logo: 'https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg' },
-  { name: 'OpenAI', logo: 'https://cdn.worldvectorlogo.com/logos/openai-2.svg' },
-  { name: 'Streamlit', logo: 'https://raw.githubusercontent.com/streamlit/streamlit/develop/lib/streamlit/static/favicon.png' },
-  { name: 'Gradio', logo: 'https://raw.githubusercontent.com/gradio-app/gradio-app/main/guides/assets/logo.png' },
-  { name: 'Gemini', logo: 'https://www.gstatic.com/lamda/images/gemini_sparkle_v002.svg' },
-  { name: 'DALL·E 2', logo: 'https://openai.com/favicon.ico' },
-  { name: 'Chroma', logo: 'https://raw.githubusercontent.com/chroma-core/chroma/main/docs/static/img/chroma.png' },
-  { name: 'PyTorch', logo: 'https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg' },
-  { name: 'Faiss', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg' },
-  { name: 'Diffusers', logo: 'https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg' },
-  { name: 'ROUGE', isText: true },
-  { name: 'PyPDF', isText: true },
-  { name: 'PIL', isText: true },
-  { name: 'Stable Diffusion', logo: 'https://raw.githubusercontent.com/Stability-AI/stablediffusion/main/assets/stable-diffusion-logo.png' },
-  { name: 'Azure AI', logo: 'https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg' }
+type Tool = {
+  name: string;
+  logo?: string;
+  text?: string;
+  textStyle?: string;
+  imageStyle?: string;
+  textOnly?: boolean;
+  style?: string;
+  isWordmark?: boolean;
+  stackText?: boolean;
+};
+
+const tools: Tool[] = [
+  // Row 1 (6 items)
+  { name: 'Azure AI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azure/azure-original.svg', imageStyle: 'h-8' },
+  { name: 'Microsoft Copilot', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/2a/Microsoft_365_Copilot_Icon.svg', imageStyle: 'h-8' },
+  { name: 'ChatGPT', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg', text: 'ChatGPT', textStyle: 'font-bold text-gray-900 text-xl tracking-tight ml-2', imageStyle: 'h-8' },
+  { name: 'LangChain', logo: 'https://avatars.githubusercontent.com/u/126733250?v=4', text: 'LangChain', textStyle: 'font-bold text-gray-800 text-xl ml-2', imageStyle: 'h-8' },
+  { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg', text: 'python', textStyle: 'text-gray-500 font-medium text-2xl tracking-tighter ml-2', imageStyle: 'h-8' },
+  { name: 'Hugging Face', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', text: 'Hugging Face', textStyle: 'font-bold text-gray-900 text-lg ml-2', imageStyle: 'h-8' },
+  
+  // Row 2 (6 items)
+  { name: 'OpenAI', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg', text: 'OpenAI', textStyle: 'font-bold text-black text-2xl tracking-tight ml-2', imageStyle: 'h-9' },
+  { name: 'Streamlit', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/streamlit/streamlit-original.svg', text: 'Streamlit', textStyle: 'text-gray-700 font-semibold text-lg ml-2', imageStyle: 'h-6' },
+  { name: 'Gradio', logo: 'https://avatars.githubusercontent.com/u/51063788?v=4', text: 'gradio', textStyle: 'text-[#E65C00] font-bold text-2xl ml-2 tracking-tight', imageStyle: 'h-8' },
+  { name: 'Gemini', logo: 'https://cdn.worldvectorlogo.com/logos/gemini-1.svg', isWordmark: true, imageStyle: 'h-8' },
+  { name: 'DALL·E 2', textOnly: true, text: 'DALL·E 2', style: 'bg-black text-white px-3 py-1 font-bold text-sm tracking-widest' },
+  { name: 'Chroma', logo: 'https://avatars.githubusercontent.com/u/108638661?v=4', text: 'Chroma', stackText: true, textStyle: 'text-[10px] font-black text-black tracking-wider mt-1 block', imageStyle: 'h-6' },
+
+  // Row 3 (7 items)
+  { name: 'ROUGE', textOnly: true, text: 'ROUGE', style: 'text-gray-600 font-semibold text-2xl uppercase tracking-widest' },
+  { name: 'PyPDF', textOnly: true, text: 'PyPDF', style: 'text-[#0B5C2D] font-black text-2xl tracking-tighter' },
+  { name: 'Python Imaging Library', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg', text: 'Python\nImaging\nLibrary', textStyle: 'text-[9px] font-bold text-gray-700 leading-tight ml-2 whitespace-pre-wrap text-left', imageStyle: 'h-6' },
+  { name: 'PyTorch', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg', text: 'PyTorch', textStyle: 'text-gray-700 font-normal text-xl ml-2', imageStyle: 'h-8' },
+  { name: 'Faiss', logo: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg', text: 'Faiss', stackText: true, textStyle: 'text-[12px] font-bold text-gray-800 mt-1 block', imageStyle: 'h-5' },
+  { name: 'Stable Diffusion', logo: 'https://avatars.githubusercontent.com/u/100555041?v=4', imageStyle: 'h-8' },
+  { name: 'Diffusers', logo: 'https://huggingface.co/front/assets/huggingface_logo-noborder.svg', text: 'Diffusers', textStyle: 'font-bold text-black text-lg ml-2', imageStyle: 'h-8' }
 ];
+
+const ToolItem = ({ tool }: { tool: Tool }) => {
+  if (tool.textOnly) {
+    return <div className={`flex items-center justify-center ${tool.style}`}>{tool.text}</div>;
+  }
+
+  if (tool.isWordmark && tool.logo) {
+    return <img src={tool.logo} alt={tool.name} className={tool.imageStyle} referrerPolicy="no-referrer" />;
+  }
+
+  if (tool.stackText && tool.logo) {
+    return (
+      <div className="flex flex-col items-center justify-center text-center">
+        <img src={tool.logo} alt={tool.name} className={tool.imageStyle} referrerPolicy="no-referrer" />
+        {tool.text && <span className={tool.textStyle}>{tool.text}</span>}
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex items-center justify-center">
+      {tool.logo && <img src={tool.logo} alt={tool.name} className={tool.imageStyle} referrerPolicy="no-referrer" />}
+      {tool.text && <span className={tool.textStyle}>{tool.text}</span>}
+    </div>
+  );
+};
 
 const SkillsTools: React.FC = () => {
   return (
@@ -51,7 +94,7 @@ const SkillsTools: React.FC = () => {
                 className="flex items-center gap-4 group"
               >
                 <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-brand-accent transition-colors">
-                  <CheckCircle2 className="text-blue-500 group-hover:text-white" size={16} />
+                  <BadgeCheck className="text-blue-500 group-hover:text-white" size={16} />
                 </div>
                 <span className="font-bold text-brand-primary/80 group-hover:text-brand-accent transition-colors">{skill}</span>
               </motion.div>
@@ -59,34 +102,35 @@ const SkillsTools: React.FC = () => {
           </div>
         </div>
 
-        <div>
-          <h3 className="text-3xl font-black text-brand-primary mb-12 flex items-center gap-4">
+        <div className="mt-20 w-full max-w-6xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-800 mb-16 text-left">
             19+ Tools Covered
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-12 gap-y-16 items-center justify-items-center bg-gray-50/30 p-12 rounded-[40px] border border-gray-100">
-            {tools.map((tool, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="flex flex-col items-center justify-center gap-4 group cursor-help w-full"
-              >
-                {tool.logo ? (
-                  <div className="h-12 w-full flex items-center justify-center transition-all duration-500 hover:scale-110">
-                    <img src={tool.logo} alt={tool.name} className="max-h-full max-w-full object-contain" />
-                  </div>
-                ) : (
-                  <div className="h-12 flex items-center justify-center">
-                    <span className="text-xl font-black text-brand-primary/40 uppercase tracking-tighter group-hover:text-brand-accent transition-colors">{tool.name}</span>
-                  </div>
-                )}
-                <div className="text-[10px] font-black uppercase tracking-widest text-brand-tertiary/20 opacity-0 group-hover:opacity-100 transition-opacity text-center">
-                  {tool.name}
-                </div>
-              </motion.div>
-            ))}
+          </h2>
+          <div className="flex flex-col gap-16 w-full items-center px-2">
+            {/* Row 1 */}
+            <div className="flex flex-wrap justify-between items-center w-full">
+              {tools.slice(0, 6).map((tool, i) => (
+                <motion.div key={`r1-${i}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-center justify-center shrink-0">
+                  <ToolItem tool={tool} />
+                </motion.div>
+              ))}
+            </div>
+            {/* Row 2 */}
+            <div className="flex flex-wrap justify-between items-center w-full">
+              {tools.slice(6, 12).map((tool, i) => (
+                <motion.div key={`r2-${i}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-center justify-center shrink-0">
+                  <ToolItem tool={tool} />
+                </motion.div>
+              ))}
+            </div>
+            {/* Row 3 */}
+            <div className="flex flex-wrap justify-between items-center w-full">
+              {tools.slice(12, 19).map((tool, i) => (
+                <motion.div key={`r3-${i}`} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="flex items-center justify-center shrink-0">
+                  <ToolItem tool={tool} />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

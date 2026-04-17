@@ -25,9 +25,9 @@ const Hero: React.FC = () => {
               className="flex items-center gap-4 mb-6"
             >
               <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 flex items-center gap-3">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png" alt="IIT Madras" className="h-10 brightness-0 invert" />
+                <img src="/ottobon_logo.png" alt="Ottobon" className="h-10" onError={(e) => { e.currentTarget.style.display='none'; }} />
                 <div className="h-8 w-[1px] bg-white/30" />
-                <span className="font-bold tracking-wider text-sm text-brand-sage uppercase">IIT Madras Pravartak</span>
+                <span className="font-bold tracking-wider text-sm text-brand-sage uppercase">Ottobon</span>
               </div>
             </motion.div>
 
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-white/70 mb-8 max-w-2xl leading-relaxed italic"
             >
-              "Master the art of building multi-agent systems and production-grade RAG applications with the pioneers from IIT Madras."
+              "Master the art of building multi-agent systems and production-grade RAG applications with the pioneers from Ottobon."
             </motion.p>
 
             <motion.div 
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
             >
               {[
                 { label: 'Duration', val: '4 Months', icon: Calendar },
-                { label: 'Certificate', val: 'IIT Madras', icon: Award },
+                { label: 'Certificate', val: 'Ottobon', icon: Award },
                 { label: 'Cohort', val: 'May 2026', icon: Briefcase },
                 { label: 'Format', val: 'Online', icon: Download },
               ].map((item, i) => (

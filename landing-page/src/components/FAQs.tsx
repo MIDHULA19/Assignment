@@ -9,11 +9,11 @@ const faqs = [
   },
   { 
     q: 'Who will be the faculty for this Applied Generative AI course?', 
-    a: 'The program is led by distinguished faculty from IIT Madras (Pravartak Technologies Foundation) along with industry practitioners who are experts in GenAI architecture and multi-agent systems.' 
+    a: 'The program is led by distinguished faculty from Ottobon along with industry practitioners who are experts in GenAI architecture and multi-agent systems.' 
   },
   { 
     q: 'What certificate will I receive after completing this Applied Generative AI course?', 
-    a: 'Upon successful completion, you will receive a prestigious "Certificate of Completion" from IIT Madras Pravartak Technologies Foundation and a Microsoft Azure AI Fundamentals certificate.' 
+    a: 'Upon successful completion, you will receive a prestigious "Certificate of Completion" from Ottobon and a Microsoft Azure AI Fundamentals certificate.' 
   },
   { 
     q: 'What are the eligibility requirements for this Applied Generative AI course?', 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
+import { BadgeCheck } from 'lucide-react';
 
 const benefits = [
-  'Certificate from IITM Pravartak Technologies Foundation',
-  'Attend a 2-day campus immersion at IIT Madras Research Park',
+  'Certificate from Ottobon',
+  'Attend a 2-day campus immersion with Ottobon',
   '80+ hours of curriculum delivered in live online classes',
   'Build, optimize, and deploy custom AI Agents using MCP',
   'Exposure to ChatGPT, Azure AI Studio, Copilot, & more'
@@ -76,7 +76,7 @@ const FinalApply: React.FC = () => {
                        className="flex items-center gap-6 group"
                     >
                        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center shrink-0 group-hover:bg-blue-600 transition-colors">
-                          <CheckCircle2 className="text-blue-600 group-hover:text-white" size={24} />
+                          <BadgeCheck className="text-blue-600 group-hover:text-white" size={24} />
                        </div>
                        <span className="text-lg font-black text-brand-primary/80 group-hover:text-brand-primary transition-colors leading-snug">
                           {benefit}

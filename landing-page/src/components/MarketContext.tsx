@@ -83,9 +83,10 @@ const MarketContext: React.FC = () => {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="flex items-center justify-center transition-all duration-500 hover:scale-110"
+                className="flex flex-col items-center justify-center transition-all duration-500 hover:scale-110 relative group cursor-pointer"
               >
-                <img src={company.logo} alt={company.name} className="h-8 md:h-10 w-auto object-contain" />
+                <img src={company.logo} alt={company.name} className="h-8 md:h-10 w-auto object-contain pointer-events-none" />
+                <span className="absolute -top-10 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity bg-brand-primary text-white text-xs font-bold px-3 py-1.5 rounded-lg shadow-lg pointer-events-none whitespace-nowrap z-10 before:content-[''] before:absolute before:-bottom-1 before:left-1/2 before:-translate-x-1/2 before:border-4 before:border-transparent before:border-t-brand-primary drop-shadow-md">{company.name}</span>
               </motion.div>
             ))}
           </div>

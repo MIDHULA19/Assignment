@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               GEN<span className="text-brand-accent">AI</span> PRO
             </div>
             <p className="text-white/60 text-lg font-medium max-w-md mb-8 leading-relaxed">
-              Empowering global professionals with industry-leading Generative AI education in collaboration with IIT Madras.
+              Empowering global professionals with industry-leading Generative AI education in collaboration with Ottobon.
             </p>
             <div className="flex gap-4">
               {[Link, Globe, Share2].map((Icon, i) => (

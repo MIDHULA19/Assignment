@@ -12,13 +12,13 @@ const Features: React.FC = () => {
 
   const highlights = [
     {
-      title: 'IIT Madras Pravartak Certification',
-      desc: 'Earn a prestigious certificate from IT Madras Pravartak Technologies Foundation, an IIT Madras initiative.',
+      title: 'Ottobon Certification',
+      desc: 'Earn a prestigious certificate from Ottobon.',
       color: 'bg-brand-sage'
     },
     {
       title: '70+ Hours of Live Learning',
-      desc: 'Interactive sessions led by industry experts and IIT Madras faculty specializing in Generative AI.',
+      desc: 'Interactive sessions led by industry experts and Ottobon faculty specializing in Generative AI.',
       color: 'bg-brand-accent'
     },
     {

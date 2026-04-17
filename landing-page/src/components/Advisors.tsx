@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const advisors = [
   {
     name: "Dr. Andrew S.",
-    role: "Professor, IIT Madras",
+    role: "Professor, Ottobon",
     specialization: "AI Research & Neural Networks",
     img: "https://i.pravatar.cc/150?u=a1"
   },
@@ -23,7 +23,7 @@ const advisors = [
   },
   {
     name: "Dr. Priya K.",
-    role: "Faculty, IIT Madras",
+    role: "Faculty, Ottobon",
     specialization: "Machine Learning & Ethics",
     img: "https://i.pravatar.cc/150?u=a4"
   }
@@ -35,7 +35,7 @@ const Advisors: React.FC = () => {
       <div className="container-custom">
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-black mb-4">Learn From the Best</h2>
-          <p className="text-gray-600 max-w-2xl font-medium">Our program is designed and delivered by industry pioneers and distinguished IIT Madras faculty.</p>
+          <p className="text-gray-600 max-w-2xl font-medium">Our program is designed and delivered by industry pioneers and distinguished Ottobon faculty.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

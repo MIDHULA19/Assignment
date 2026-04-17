@@ -28,7 +28,7 @@ const Registration: React.FC = () => {
 
                 <div className="space-y-6">
                   {[
-                    "Direct mentorship from IIT Madras experts",
+                    "Direct mentorship from Ottobon experts",
                     "Hands-on projects with production-grade RAG",
                     "Exclusive access to GenAI Pro community",
                     "Career support and networking opportunities"
