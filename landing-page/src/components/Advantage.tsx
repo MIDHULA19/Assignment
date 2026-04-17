@@ -20,11 +20,11 @@ const Advantage: React.FC = () => {
 
         <div className="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-xl border border-brand-cream relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
-          
+
           <h4 className="text-2xl font-black text-brand-primary mb-8 border-l-4 border-brand-accent pl-5 uppercase tracking-wider">
             Advantage Ottobon
           </h4>
-          
+
           <div className="space-y-6 relative z-10">
             {[
               "Earn a program certificate directly from Ottobon within 90 days of program completion",
