@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, ChevronUp, Phone } from 'lucide-react';
+import { ChevronDown, ChevronUp, Phone, Download } from 'lucide-react';
 
 const modules = [
   {
@@ -42,7 +42,17 @@ const LearningPath: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Timeline Left */}
           <div className="lg:col-span-8">
-            <h3 className="text-2xl font-black text-brand-primary mb-8 uppercase tracking-tight">Learning Path</h3>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8">
+              <h3 className="text-2xl font-black text-brand-primary uppercase tracking-tight">Learning Path</h3>
+              <a 
+                href="/Ottobon_AI_Curriculum.pdf" 
+                download="Ottobon_Applied_GenAI_Curriculum.pdf"
+                className="flex items-center gap-2 bg-brand-primary text-white px-6 py-3 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-brand-accent transition-all shadow-xl shadow-brand-primary/10 group no-underline"
+              >
+                <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
+                Download Curriculum
+              </a>
+            </div>
             <div className="space-y-4">
               {modules.map((mod) => (
                 <div key={mod.id} className="border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
